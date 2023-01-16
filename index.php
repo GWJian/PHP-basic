@@ -1,82 +1,59 @@
-<!-- https://portal.forwardschool.co/library/cs-1-2-software-design-and-architecture-55877/453636/path/step/226591256/ -->
-
-
 <?php
 
+/* Car & motorcycle rental application */
 
-
-// ========================================================================================================
-class Math {
-    public static function add($a, $b) {
-        return $a + $b;
-    }
-}
-
-$numbers = [ 2, 3, 4, 5, 6 ];
-
-$total = 0;
-
-foreach( $numbers as $num )
+/**
+ * This is the framework for you to create your class.
+ * Any methods here must 
+ *  be in the class that implemented the interface.
+ */
+interface ParkYourVehicleInterface
 {
-    $total = Math::add( $total, $num );
+    public function park();
 }
 
-// for ( $i = 0; $i < count( $numbers ); $i++ )
-// {
-//     $total = Math::add( $total, $numbers[$i] ); // ex:$numbers[0]
-// }
-
-// round 1 - 0 + 2, $total = 2
-// round 2 - 2 + 3, $num = 3, $total = 5
-// round 3 - 5 + 4, $num = 4, $total = 9
-// round 4 - 9 + 5, $num = 5, $total = 14
-// round 5 - 14 + 6, $num = 6, $total = 20
-
-echo $total;
-
-
-// ==============================================================================================================
-
-
-class ShippingCalculator
+interface VehicleWheelsInterface
 {
-    public static function multiply ($weight,$distance)
-    {
-        return $weight * $distance;
-    }
+   public function getWheels();
+   public function updateWheels();
 }
 
-echo '<br />';
-echo ShippingCalculator::multiply( 10,100 );
-
-// ==============================================================================================================
-
-class CAT
+// children class
+class Car implements VehicleWheelsInterface
 {
-    public static function meow ( $meow )
+
+    public function getWheels()
     {
-        return $meow;
+
     }
-    public static function scratch ( $meow )
+
+    public function updateWheels()
     {
-        return $meow;
+
     }
-    public static function age ( $meow )
+
+    public function drive()
     {
-        return $meow;
+
     }
+
+    public function park()
+    {
+
+    }
+
 }
 
 
-echo '<br />';
-echo CAT::meow('oyen meow');
-echo '<br />';
-echo CAT::scratch('oyen scratch the sofa');
-echo '<br />';
-echo CAT::age('oyen is 1 years old');
+class Motorcycle
+{
+    public function ride()
+    {
 
+    }
 
+    public function park()
+    {
 
-
-
-?>
+    }
+}
